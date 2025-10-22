@@ -1,6 +1,5 @@
 package sesudah;
 
-// Menerapkan Rename Variable, Introduce Constant, dan Extract Method
 public class KalkulatorIMT implements OperasiKalkulator {
     // 2. Introduce Constant
     private static final double KONVERSI_CM_KE_METER = 100.0;

@@ -1,36 +1,35 @@
-public class TaxiTicket {
-    public String pName;
-    public String slocation;
-    public String dest;
-    public double prc;
+import tugas3.TicketInfo;
+
+public class TaxiTicket extends Ticket implements Operational {
+    public static final double TAX_RATE = 0.1;
     private double duration;
     private double speed;
 
     private static final double MIN_SPEED = 5;
     private static final double MAX_SPEED = 100;
 
-    public TaxiTicket(String passengerName, String startlocation, String destination, double price, double duration, double speed) {
-        this.pName = passengerName;
-        this.slocation = startlocation;
-        this.dest = destination;
-        this.prc = price;
+    public TaxiTicket(TicketInfo ticketInfo, double duration, double speed) {
+        super(ticketInfo.passengerName(), ticketInfo.startlocation(), ticketInfo.destination(), ticketInfo.price());
         this.duration = duration;
         this.speed = speed;
     }
 
     // Method to check taxi status
-    public void cS() {
-        System.out.println("Your taxi is heading to " + dest);
+    @Override
+    public void checkStatus() {
+        System.out.println("Your taxi is heading to " + destination);
     }
 
     // Method to display estimated travel duration
-    public void dED() {
+    @Override
+    public void displayEstimatedDuration() {
         System.out.println("Estimated travel duration: " + duration + " minutes");
     }
 
     // Method to display the route
-    public void dR() {
-        System.out.println("Route: " + slocation + " -> " + dest);
+    @Override
+    public void displayRoute() {
+        System.out.println("Route: " + startLocation + " -> " + destination);
     }
 
     // Method to slow down the taxi
@@ -53,34 +52,24 @@ public class TaxiTicket {
     }
 
     // Method to display basic info passenger and trip
-    public void di() {
-        System.out.println("Passenger Name   : " + pName);
-        System.out.println("Start Location   : " + slocation);
-        System.out.println("Destination      : " + dest);
-        System.out.println("Price            : " + prc);
-        System.out.println("Final Price      : " + (prc + (prc * 0.1))); // Price including 10% tax
+    @Override
+    public void displayInfo() {
+        System.out.println("Passenger Name   : " + passengerName);
+        System.out.println("Start Location   : " + startLocation);
+        System.out.println("Destination      : " + destination);
+        System.out.println("Price            : " + price);
+        System.out.println("Final Price      : " + calculateFinalPrice()); // Price including 10% tax
+    }
+
+    private double calculateFinalPrice() {
+        return price + (price * TAX_RATE);
     }
 
     // Method to display full info including duration and speed
     public void detailedInfo() {
-        di();
+        displayInfo();
         System.out.println("Duration         : " + duration + " minutes");
         System.out.println("Speed            : " + speed + " km/h");
     }
 
-    public static void main(String[] args) {
-        TaxiTicket ticket = new TaxiTicket("Alice", "Downtown", "Airport", 50.0, 30.0, 60.0);
-
-        ticket.detailedInfo(); // Display full info
-
-        ticket.cS(); // Check taxi status
-
-        // Display route and estimated duration
-        ticket.dR();
-        ticket.dED();
-
-        // Simulate slowing down and speeding up
-        ticket.slowDown(20);
-        ticket.speedUp(15);
-    }
 }
