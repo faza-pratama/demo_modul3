@@ -1,0 +1,34 @@
+# Program Input Sederhana Java
+
+Ini adalah program Java sederhana yang menunjukkan cara menerima input numerik (integer) dari pengguna melalui konsol dan menampilkannya kembali.
+
+## Deskripsi
+
+Program ini akan melakukan hal berikut:
+1.  Meminta pengguna untuk memasukkan sebuah nilai integer (`a`).
+2.  Meminta pengguna untuk memasukkan nilai integer kedua (`b`).
+3.  Mencetak kembali kedua nilai yang telah dimasukkan oleh pengguna ke layar konsol.
+
+Proyek ini dibuat untuk tujuan demonstrasi dasar penggunaan kelas `Scanner` untuk input pengguna di Java.
+
+## Prasyarat
+
+Pastikan Anda telah menginstal Java Development Kit (JDK) di sistem Anda untuk dapat mengkompilasi dan menjalankan program ini.
+
+## Cara Menjalankan
+
+1.  Simpan kode di atas dalam sebuah file bernama `Main.java`.
+2.  Buka terminal atau command prompt Anda.
+3.  Navigasi ke direktori tempat Anda menyimpan file `Main.java`.
+4.  Kompilasi file Java dengan perintah berikut:
+    ```bash
+    javac Main.java
+    ```
+5.  Setelah kompilasi berhasil (yang akan menghasilkan file `Main.class`), jalankan program dengan perintah:
+    ```bash
+    java Main
+    ```
+
+## Contoh Penggunaan
+
+Setelah Anda menjalankan perintah `java Main`, interaksi di terminal Anda akan terlihat seperti ini:
