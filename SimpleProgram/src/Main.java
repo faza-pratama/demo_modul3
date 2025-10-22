@@ -5,7 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         /**
          * @param a nilai a
-         * @param b nilai b
+         * @param b nilai c
          */
 
         System.out.print("masukan nilai a:");

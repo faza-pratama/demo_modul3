@@ -28,7 +28,3 @@ Pastikan Anda telah menginstal Java Development Kit (JDK) di sistem Anda untuk d
     ```bash
     java Main
     ```
-
-## Contoh Penggunaan
-
-Setelah Anda menjalankan perintah `java Main`, interaksi di terminal Anda akan terlihat seperti ini:
