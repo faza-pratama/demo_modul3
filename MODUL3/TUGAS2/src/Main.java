@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         KalkulatorIMT kalkulator = new KalkulatorIMT();
-
+        System.out.println("");
         System.out.print("Masukkan Nama: ");
         String nama = input.nextLine();
 
